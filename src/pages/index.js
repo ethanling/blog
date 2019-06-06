@@ -1,21 +1,66 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+    const { edges } = data.allMarkdownRemark
+
+    function formatDate(d) {
+		let formattedDate = new Date(d).toLocaleDateString("en-us", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+        })
+        return formattedDate
+    }
+
+    return (
+        <Layout
+            children={edges.map(edge => {
+                const { frontmatter } = edge.node
+                return (
+                    <div key={frontmatter.title} className="post-item">
+						<div
+							key={frontmatter.date}
+							className="post-item-date"
+						>
+							{formatDate(frontmatter.date)}
+						</div>
+                        <div
+                            key={frontmatter.path}
+                            className="post-title-container"
+                        >
+                            <Link to={frontmatter.path} className="post-title">
+                                {frontmatter.title}
+                            </Link>
+                        </div>
+                        <div key={frontmatter.excerpt} className="post-excerpt">
+                            {frontmatter.excerpt}
+                        </div>
+                    </div>
+                )
+            })}
+        />
+    )
+}
+
+export const query = graphql`
+    query HomepageQuery {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        path
+                        date
+                        excerpt
+                    }
+                }
+            }
+        }
+    }
+`
 
 export default IndexPage
