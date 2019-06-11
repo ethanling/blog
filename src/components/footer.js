@@ -1,30 +1,43 @@
 import React from "react"
+import ThemeContext from "../context/ThemeContext"
+
 import github from "../images/github.svg"
-import twitter from "../images/twitter.svg"
-import instagram from "../images/instagram.svg"
+import Twitter from './icons/twitter'
+import Instagram from './icons/instagram'
+import Github from "./icons/github"
 
 const Footer = () => {
     return (
-        <footer>
-            <a href="http://github.com/ethanling">
-                <img
-                    src={github}
-                    alt="Ethan's Github"
-                />
-            </a>
-            <a href="http://twitter.com/ethanling">
-                <img
-                    src={twitter}
-                    alt="Ethan's Twitter"
-                />
-            </a>
-            <a href="http://instagram.com/ethanling">
-                <img
-                    src={instagram}
-                    alt="Ethan's Instagram"
-                />
-            </a>
-        </footer>
+        <ThemeContext.Consumer>
+            {theme => (
+                <footer>
+                    <a href="http://github.com/ethanling">
+                        <Github
+                            fill={theme.dark ? "#FFEB70" : "#120E0E"}
+                            viewBox={"0 0 24 24"}
+                            height={"34px"}
+                            width={"34px"}
+                        />
+                    </a>
+                    <a href="http://twitter.com/ethanling">
+                        <Twitter
+                            fill={theme.dark ? "#FFEB70" : "#120E0E"}
+                            viewBox={"0 0 24 24"}
+                            height={"34px"}
+                            width={"34px"}
+                        />
+                    </a>
+                    <a href="http://instagram.com/ethanling">
+                        <Instagram
+                            fill={theme.dark ? "#FFEB70" : "#120E0E"}
+                            viewBox={"0 0 24 24"}
+                            height={"34px"}
+                            width={"34px"}
+                        />
+                    </a>
+                </footer>
+            )}
+        </ThemeContext.Consumer>
     )
 }
 

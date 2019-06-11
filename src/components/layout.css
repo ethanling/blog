@@ -5,7 +5,7 @@
 	--bg-dark: #120E0E;
 	--bg-accent: #3B4148;
 	--shadow: ;
-	--date: ;
+	--date-light: ;
 }
 
 *, *:before, *:after {
@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: top;
-    background: var(--bg-dark);
+    /* background: var(--bg-dark); */
 	color: #f9f9fa;
 	border-top: 10px solid var(--accent);
 	overflow-x: hidden;
@@ -65,14 +65,16 @@ main {
 }
 
 footer {
-	color: var(--accent);
     display: flex;
 	justify-content: center;
 	margin: 80px 0px 50px 0px;
+	padding: 20px;
+	border-radius: 28px;
 }
 
-footer img {
+footer svg {
 	margin: 10px;
+	transition: all .5s ease-out;
 }
 
 footer.post-page-footer {
@@ -88,6 +90,14 @@ nav {
 	position: absolute;
 	top: 0;
 	display: flex;
+}
+
+.page {
+	min-width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	transition: all .5s ease-out;
 }
 
 .wrapper {
@@ -120,24 +130,69 @@ nav {
 	margin-right: 20px;
 }
 
+.dark-switcher {
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	border: 0 none;
+	border-radius: 30px;
+	font-size: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--bg-accent);
+	padding: 6px 1px 6px 1px;
+}
+
+.theme-button-box {
+	background-color: ;
+}
+
+
+.theme-button-light {
+	color: var(--accent);
+}
+
+.theme-button-dark {
+	color: var(--text);
+}
+
+.theme-button {
+	opacity: .4;
+	margin: 0px 5px 0px 5px;
+	border-radius: 50%;
+	padding: 2px 5px 2px 5px;
+}
+
+.highlight {
+	opacity: 1.0;
+	transition: all .4s ease-out;
+	background: var(--bg-dark);
+}
+
+
 .post-item {
     flex: 1;
     margin: 0px 0px 60px 0px;
 }
 
 .post-title-container {
-    margin-bottom: 15px;
+	display: flex;
+	margin-bottom: 30px;
+	border-bottom: 10px solid var(--accent);
 }
 
 .post-title {
-    font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
 	font-size: 32px;
 	color: #f9f9fa;
+	padding-right: 5px;
 }
 
 .post-item-date {
     color: var(--accent);
-    margin: 10px 0px 14px 0px;
+    margin: 10px 0px 10px 0px;
 	font-size: 14px;
 	font-weight: bold;
 }
@@ -199,4 +254,38 @@ nav {
 
 .footer-content {
 
+}
+
+/* 
+	Dark Mode Styles
+*/
+
+.dark {
+	background-color: var(--bg-dark);
+}
+
+.dark a {
+	color: 
+}
+
+
+.light {
+	background-color: var(--text);
+	color: var(--bg-dark);
+}
+
+.light a {
+	color: var(--bg-dark);
+}
+
+.light footer {
+	background-color: #eee;
+}
+
+.light .header-description {
+	color: var(--bg-accent);
+}
+
+.light .post-item-date {
+	color: var(--bg-accent);
 }
