@@ -21,22 +21,31 @@ const IndexPage = ({ data }) => {
             children={edges.map(edge => {
                 const { frontmatter } = edge.node
                 return (
-                    <div key={frontmatter.title} className="post-item">
-						<div
-							key={frontmatter.date}
-							className="post-item-date"
-						>
-							{formatDate(frontmatter.date)}
-						</div>
+                    <div
+                        key={frontmatter.title}
+                        className="post-item"
+                    >
                         <div
                             key={frontmatter.path}
                             className="post-title-container"
                         >
-                            <Link to={frontmatter.path} className="post-title">
+                            <Link
+                                to={frontmatter.path}
+                                className="post-title"
+                            >
                                 {frontmatter.title}
                             </Link>
+                            <div
+                                key={frontmatter.date}
+                                className="post-item-date"
+                            >
+                                {formatDate(frontmatter.date)}
+                            </div>
                         </div>
-                        <div key={frontmatter.excerpt} className="post-excerpt">
+                        <div
+                            key={frontmatter.excerpt}
+                            className="post-excerpt"
+                        >
                             {frontmatter.excerpt}
                         </div>
                     </div>
