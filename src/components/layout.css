@@ -30,7 +30,7 @@ body {
     align-items: top;
     background: var(--bg-dark);
 	color: #f9f9fa;
-	border-top: 10px solid var(--accent);
+	border-top: 15px solid var(--accent);
 	overflow-x: hidden;
 }
 
@@ -123,11 +123,11 @@ nav {
 
 .dark-switcher {
 	position: absolute;
-	top: 30px;
+	top: 35px;
 	right: 20px;
 	border: 0 none;
 	border-radius: 30px;
-	font-size: 22px;
+	font-size: 18px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
