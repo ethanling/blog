@@ -44,7 +44,8 @@ a:hover {
 }
 
 section {
-	width: 70%;
+	width: 80%;
+	margin-left: 40px;
 }
 
 
@@ -58,7 +59,6 @@ header {
 }
 
 main {
-	width: 100%;
     justify-content: left;
 	margin-top: 40px;
 }
@@ -94,7 +94,7 @@ nav {
 .wrapper {
     display: flex;
     flex-direction: column;
-	min-width: 60vw;
+	min-width: 65vw;
 }
 
 .header-title {
@@ -168,11 +168,11 @@ nav {
 }
 
 .post-item {
-    flex: 1;
     margin: 20px 0px 60px 0px;
 }
 
 .post-title-container {
+	width: 100%;
 	margin-bottom: 30px;
 	border-bottom: 10px solid var(--accent);
 }
@@ -250,6 +250,13 @@ nav {
 
 .footer-content {
 
+}
+
+.copyright-text {
+	display: block;
+	text-align: center;
+	font-size: 10px;
+	margin: 0px 0px 8px 0px;
 }
 
 /* 

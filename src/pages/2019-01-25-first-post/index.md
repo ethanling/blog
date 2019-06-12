@@ -1,9 +1,9 @@
 ---
 path: "/first-post"
 date: "2019-01-25"
-title: "My First Post"
+title: "How I Built This Blog"
 tags: ['this', 'that']
-excerpt: "A preview of my first post"
+excerpt: "Using Gatsby, React, GraphQl, and Markdown for ease-of-use, and lightning-fast file serving."
 ---
 
 ##Lorem Ipsum
