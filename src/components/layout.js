@@ -16,9 +16,6 @@ const Layout = ({ children }) => {
                             <main>{children}</main>
                         </section>
                         <Footer />
-                        <p className="copyright-text">
-                            &copy; Copyright 2019. All Rights Reserved.
-                        </p>
                     </div>
                 </div>
             )}
