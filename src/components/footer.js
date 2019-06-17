@@ -5,6 +5,12 @@ import Twitter from './icons/twitter'
 import Instagram from './icons/instagram'
 import Github from "./icons/github"
 
+const svgOptions = {
+    viewBox: '0 0 24 24',
+    height: '34px',
+    width: '34px',
+}
+
 const Footer = () => {
     return (
         <ThemeContext.Consumer>
@@ -17,9 +23,9 @@ const Footer = () => {
                         >
                             <Github
                                 fill={theme.dark ? "#FFEB70" : "#120E0E"}
-                                viewBox={"0 0 24 24"}
-                                height={"34px"}
-                                width={"34px"}
+                                viewBox={svgOptions.viewBox}
+                                height={svgOptions.height}
+                                width={svgOptions.width}
                             />
                         </a>
                         <a
@@ -28,9 +34,9 @@ const Footer = () => {
                         >
                             <Twitter
                                 fill={theme.dark ? "#FFEB70" : "#120E0E"}
-                                viewBox={"0 0 24 24"}
-                                height={"34px"}
-                                width={"34px"}
+                                viewBox={svgOptions.viewBox}
+                                height={svgOptions.height}
+                                width={svgOptions.width}
                             />
                         </a>
                         <a
@@ -39,9 +45,9 @@ const Footer = () => {
                         >
                             <Instagram
                                 fill={theme.dark ? "#FFEB70" : "#120E0E"}
-                                viewBox={"0 0 24 24"}
-                                height={"34px"}
-                                width={"34px"}
+                                viewBox={svgOptions.viewBox}
+                                height={svgOptions.height}
+                                width={svgOptions.width}
                             />
                         </a>
                     </div>

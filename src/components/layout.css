@@ -45,7 +45,6 @@ a:hover {
 
 section {
 	width: 80%;
-	margin-left: 40px;
 }
 
 
@@ -96,6 +95,7 @@ nav {
     display: flex;
     flex-direction: column;
 	min-width: 65vw;
+    align-items: center;
 }
 
 .header-title {
@@ -175,7 +175,8 @@ nav {
 .post-title-container {
 	width: 100%;
 	margin-bottom: 30px;
-	border-bottom: 10px solid var(--accent);
+    padding-bottom: 10px;
+	border-bottom: 4px solid var(--accent);
 }
 
 .post-title {
@@ -187,7 +188,7 @@ nav {
 }
 
 .post-item-date {
-	margin: 10px 0px 10px 0px;
+	margin: 14px 0px 10px 0px;
     color: #eee;
 	font-size: 16px;
 	font-weight: 400;
