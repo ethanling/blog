@@ -275,6 +275,10 @@ nav {
 	text-decoration: underline;
 }
 
+.dark a.post-title:hover {
+    text-decoration: none;
+}
+
 
 .light {
 	background-color: var(--text);
